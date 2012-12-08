@@ -1,0 +1,57 @@
+<html>
+<head>
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css'>
+	<style type='text/css'>
+		.red { color: red; }
+		a.red:visited, a.red:link, a.red:hover { color: red; }
+		.square { height: 24px; width: 24px; float: left; margin-right: 5px; }
+		.square_small { height: 14px; width: 14px; float: left; margin-right: 4px; }
+		.ROC {
+			border-left: solid 2px red;
+			border-top: solid 2px red;
+		}
+		h1 {
+			font-weight: normal;
+			font-size: 18px;
+			line-height: 24px;
+		}
+		#tel { clear: both; }
+	</style>
+</head>
+<body style="font-family: 'Lato', serif; color: black; font-size: 14px; line-height: 18px">
+	<div class="square ROC"></div><h1>THE DATA POETRY GROUP signature creator</h1>
+	<form id="detailform">
+	<table>
+		<tbody>
+		<tr><td>Name</td><td><input size="80" type="text" data-elem="fullname" value="Joe Bloggs"/></td></tr>
+		<tr><td>Position</td><td><input size="80" type="text" data-elem="position" value="Partner"/></td></tr>
+		<tr><td>Tel</td><td><input size="80" type="text" data-elem="tel" value="0400 123 456"/></td></tr>
+		<tr><td>E-mail</td><td><input size="80" type="text" data-elem="email" value="joe.bloggs@datapoetry.com"/></td></tr>
+		</tbody>
+	</table>
+	</form>					
+	<div>
+<div style="font-weight: 900; padding: 14px 0;"><span id="fullname">Joe Bloggs</span>, <span id="position">Partner</span></div>
+<div class="square_small ROC"></div><div style="line-height: 16px;">THE DATA POETRY GROUP</div>
+<div id="tel" style="padding: 10px 0;">0400 123 456</div>
+<div><a id="email" href="mailto:joe.bloggs@datapoetry.com" class="red">joe.bloggs@datapoetry.com</a></div>
+</div>
+</body>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+		treatInput = function(input) {
+			return $("<pre></pre>").text($.trim(input)).html();
+		};
+
+		$("#detailform").find("input").bind('input', function() {
+			var elem = $(this).attr("data-elem");
+			var content = treatInput($(this).val())
+			$("#" + elem).html(content);
+			if(elem == "email") {
+				$("#email").attr("href", "mailto:" + content);
+			}
+		});
+});
+</script>
+</html>
