@@ -3,7 +3,11 @@
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css'>
 	<style type='text/css'>
 		.red { color: red; }
-		a.red:visited, a.red:link, a.red:hover { color: red; }
+		a.red:visited, a.red:link { color: red; text-decoration: none; }
+		a.red:hover, a.red:active { color: red; text-decoration: underline; }
+		.black { color: black }
+		a.black:visited, a.black:link { color: black; text-decoration: none; }
+		a.black:hover, a.black:active { color: black; text-decoration: underline; }
 		.square { height: 24px; width: 24px; float: left; margin-right: 5px; }
 		.square_small { height: 14px; width: 14px; float: left; margin-right: 4px; }
 		.ROC {
@@ -31,10 +35,14 @@
 	</table>
 	</form>					
 	<div>
-<div style="font-weight: 900; padding: 14px 0;"><span id="fullname">Joe Bloggs</span>, <span id="position">Partner</span></div>
+<div style="font-weight: 900; padding: 8x 0;"><span id="fullname">Joe Bloggs</span></div>
+<div style="padding: 0 0 14px;" class="red"><span id="position"><em>Partner</em></span></div>
 <div class="square_small ROC"></div><div style="line-height: 16px;">THE DATA POETRY GROUP</div>
-<div id="tel" style="padding: 10px 0;">0400 123 456</div>
-<div><a id="email" href="mailto:joe.bloggs@datapoetry.com" class="red">joe.bloggs@datapoetry.com</a></div>
+<div style="padding: 14px 0">
+	<div><strong>e</strong> <a id="email" href="mailto:joe.bloggs@datapoetry.com" class="black">joe.bloggs@datapoetry.com</a></div>
+	<div><strong>m</strong> <span id="tel">0400 123 456</span></div>
+	<div><strong>w</strong> <a href="http://www.datapoetry.com/" class="black">www.datapoetry.com</a></div>
+</div>
 </div>
 </body>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
